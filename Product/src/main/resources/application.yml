@@ -1,0 +1,36 @@
+# Configuration file in YAML format for a Spring Boot application
+
+# Server configuration
+server:
+  # Specifies the port number on which the server will run
+  port: 8081
+
+# Spring application configuration
+spring:
+  # Specifies the name of the Spring application
+  application:
+    name: product
+
+  # DataSource configuration for connecting to a PostgreSQL database
+  datasource:
+    # Database connection details
+    password: password
+    url: jdbc:postgresql://localhost:5432/product
+    username: wizardcode
+
+  # JPA (Java Persistence API) configuration
+  jpa:
+    # Hibernate configuration
+    hibernate:
+      # Automatically creates and drops the database schema at startup and shutdown
+      ddl-auto: create-drop
+    # Additional Hibernate properties
+    properties:
+      # Specifies the dialect for PostgreSQL database
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Formats SQL statements for better readability
+        format_sql: true
+
+    # Shows SQL statements in the console for debugging purposes
+    show-sql: true
